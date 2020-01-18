@@ -9,7 +9,6 @@ print("Start guessing...")
 time.sleep(0.5)
 lst=['expense', 'simultaneous', 'interceptor', 'gregarious', 'juxtaposed', 'ambivert', 'orifice', 'algebra','distortions','gynaecology','autonomous']
 word=random.choice(lst)
-print(word)
 guesses=''
 turns=10
 while(turns>0):
