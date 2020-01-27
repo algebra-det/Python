@@ -5,3 +5,10 @@ print(lst2)
 b = ''
 b = b.join(lst2)
 print(b)
+print(type(b))
+
+print()
+
+#OR
+
+print("".join(lst2))
