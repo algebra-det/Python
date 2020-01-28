@@ -13,8 +13,8 @@ Also, dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])
 
 from numpy import *
 
-alpha = array([[1,2,9],[3,4,5],[98,56,21]],int)
-beta = array([[7,9,1],[2,6,3],[41,32,12]],int)
+alpha = array([[1,2,9],[3,4,5],[98,56,21]])
+beta = array([[7,9,1],[2,6,3],[41,32,12]])
 print(alpha.dtype)
 print(alpha.ndim)
 print('Alpha array is :')
@@ -36,9 +36,16 @@ print("Dot-Product of alpha and beta :-\n",zeta)
     as we used array thats why matrix type multiplication is possible via .dot & @
 """
 
+hello = matrix([[2,3],[5,6]])
+bello = matrix([[9,8],[6,3]])
+print(hello@bello)
+print(hello.dot(bello))
+print(hello*bello)
+print(multiply(hello,bello))
 
-
-
-
-
-
+delta = array([[1,2,9],[3,4,5],[98,56,21]])
+theta = array([[7,9,1],[2,6,3],[41,32,12]])
+print(delta@theta)
+print(delta.dot(theta))
+print(delta*theta)
+print(multiply(delta,theta))
