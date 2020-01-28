@@ -47,5 +47,5 @@ print(m6)
     But for matrix multiplication/@/dot to work , the two matrix should be of same dimension
     and size
     
-    for further knowledge goto numpy_multiplication_Matrix.py
+    for further knowledge goto Numpy_Matrix_Multiplication.py
 """
