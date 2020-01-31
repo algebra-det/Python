@@ -17,12 +17,21 @@ class player:
         print("__________")
 
     def move(self,z,j):
-        term = []
-        for i in z:
-            term.append(int(i))
-        game[term[0]][term[1]] = j
-        player.board()
-        player.main()
+        try:
+            term = []
+            for i in z:
+                term.append(int(i))
+            if game[term[0]][term[1]]==0:
+                game[term[0]][term[1]] = j
+                player.board()
+                player.main()
+            else:
+                print("\nThis Position Is Already Filled, you lost your chance")
+        except Exception as e:
+            sleep(1)
+            print("\nYou lost your chance, ",e)
+            print()
+
 
     @staticmethod
     def horizontal_win():
@@ -75,12 +84,12 @@ game = [[0] * 3 for _ in range(3)]
 
 x = player()
 y = player()
-print("Let's play Tic Tac Toe\nIt's gonna be a two player game")
+print("Let's play Tic Tac Toe\nIt's gonna be a two player game\n")
 sleep(3)
-print("First Player will be assigned number-1\nSecond player will be number-2")
+print("First Player will be assigned number-1\nSecond player will be number-2\n")
 sleep(4)
 player.board()
-print('This will be the board we are gonna play, ROW is ---<horizonaatal> and COLUMN is | <vertical>')
+print('This will be the board we are gonna play, ROW is ---<horizonaatal> and COLUMN is | <vertical>\n')
 sleep(2)
 var = 1
 sipping = False
