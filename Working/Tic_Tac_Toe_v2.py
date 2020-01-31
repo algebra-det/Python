@@ -83,9 +83,6 @@ class player:
             return True
         return False
 
-    def __str__(self):
-        self
-
 game = [['-'] * 3 for _ in range(3)]
 
 x = player(1,'O')
