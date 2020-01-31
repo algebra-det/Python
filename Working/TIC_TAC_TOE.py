@@ -3,15 +3,9 @@ from time import *
 
 class player:
 
-    def winning(row):
-        if row.count(row[0]) == len(row) and row[0] != 0:  # line 19-24 can be written in a single line
-            player.board()
-            print("Game won!")
-            return True
-
     @staticmethod
     def board():
-        print("  0  1  2")
+        print("   0  1  2")
         for row, i in enumerate(game):
             print(row, i)
         print("__________")
@@ -33,11 +27,17 @@ class player:
             print()
 
 
+    def winning(row):
+        if row.count(row[0]) == len(row) and row[0] != 0:  # line 19-24 can be written in a single line
+            player.board()
+            print("Game won!")
+            return True
+
     @staticmethod
     def horizontal_win():
         for row in game:
             if player.winning(row):
-                print("Game won! - Horizontally")
+                print("Game won! - Horizontally by Player - ",row[0])
                 return True
         return False
 
@@ -48,7 +48,7 @@ class player:
             for row in game:
                 check.append(row[0])
             if player.winning(check):
-                print("Game won! - Vertically")
+                print("Game won! - Vertically by Player - ",check[0])
                 return True
         return False
 
