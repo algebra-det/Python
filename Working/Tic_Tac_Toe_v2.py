@@ -13,15 +13,18 @@ class player:
         print()
         print("         |     |     ")
         for row, i in enumerate(game):
-            print(row, "  __%s__|__%s__|__%s__"%(i[0],i[1],i[2]),end="")
-            print("\n         |     |     ")
-
+            if row!=2:
+                print(row, "  __%s__|__%s__|__%s__"%(i[0],i[1],i[2]),end="")
+                print("\n         |     |     ")
+            else:
+                print(row,"       |     |     ")
+        print()
     def move(self,z,j):
         try:
             term = []
             for i in z:
                 term.append(int(i))
-            if game[term[0]][term[1]]=='-':
+            if game[term[0]][term[1]]=='_':
                 game[term[0]][term[1]] = j
                 player.board()
                 player.main(self)
@@ -34,7 +37,7 @@ class player:
 
 
     def winning(row):
-        if row.count(row[0]) == len(row) and row[0] != '-':  # line 19-24 can be written in a single line
+        if row.count(row[0]) == len(row) and row[0] != '_':
             player.board()
             print("Game won!")
             return True
@@ -83,7 +86,7 @@ class player:
             return True
         return False
 
-game = [['-'] * 3 for _ in range(3)]
+game = [['_'] * 3 for _ in range(3)]
 
 x = player(1,'O')
 y = player(2,'X')
