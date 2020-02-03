@@ -19,6 +19,7 @@ class player:
             else:
                 print(row,"       |     |     ")
         print()
+        
     def move(self,z,j):
         try:
             term = []
@@ -78,9 +79,6 @@ class player:
     @staticmethod
     def main(self):
         global sipping
-        player.horizontal_win(self)
-        player.vertical_win(self)
-        player.diagonal_win(self)
         if player.horizontal_win(self) or player.vertical_win(self) or player.diagonal_win(self):
             sipping = True
             return True
