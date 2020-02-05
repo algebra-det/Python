@@ -1,4 +1,3 @@
-from itertools import *
 from time import *
 
 class player:
