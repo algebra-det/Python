@@ -20,7 +20,7 @@ def sorting(li):                # for sorting the list      --> Linear Search
 sorted_list = sorting(li)
 print(sorted_list)
 
-def sor(li):                    # for sorting the list
+def sor(li):                    # for sorting the list   --> Selection Sort
     for i in range(len(li)):
         m = i                            # Tlinking the minimum term for the stlinrter lins i i.e. term lint index 0
         for j in range(i+1,len(li)):
@@ -72,9 +72,23 @@ else:
     print("Not Found")
 
 
+lst = [64, 25, 12, 22, 11, 65, 23, 27, 63, 85]
+
+def bubble_sorting(lst):                # for sorting using bubble sort
+    for i in range(len(lst)-1,0,-1):
+        for j in range(i):
+            if lst[j] > lst[j+1]:
+                lst[j],lst[j+1] = lst[j+1],lst[j]
+
+
+bubble_sorting(lst)
+print(lst)
+
+
+
 # Another way --> By using Binary search algorithm
 
-def binar(li,n):
+def binary_search(li,n):                # for searching using binary search
     lower_bound = 0
     upper_bound = len(li)
 
@@ -90,7 +104,8 @@ def binar(li,n):
                 upper_bound = mid-1
     return False
 
-if binar(by_sor,45):
+if binary_search(by_sor,45):
     print("Found at ",pos)
 else:
     print("Not Found")
+
