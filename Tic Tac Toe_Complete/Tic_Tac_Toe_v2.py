@@ -100,6 +100,7 @@ print('This will be the board we are gonna play, ROW is ---<horizonaatal> and CO
 print('For example, to row - "0" and column - "1" should be writtern as 01\n')
 sleep(2)
 var = 1
+total_moves = 0
 sipping = False
 while not sipping :
     sleep(1)
@@ -107,6 +108,11 @@ while not sipping :
     if var==0:
         z = input("Enter Your move , player 1, first row than column btwn [0-2] - ")
         x.move(z,'O')
+        total_moves += 1
     else:
         z = input("Enter Your move , player 2, first row than column btwn [0-2] - ")
         y.move(z,'X')
+        total_moves += 1
+    if total_moves == 9:
+        print("Nobody Wins, It's a DRAW")
+        break
