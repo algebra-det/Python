@@ -36,9 +36,9 @@ print(y.buffer_info())                  #buffer_info gives the address,size of t
 print(y)                                #for example ,
                                         #               (19132616, 6)
 
-print(y.reverse())                      #reverse will reverse the numbers
+y.reverse()                      #reverse will reverse the numbers
 print(y)
-print(y.reverse())
+y.reverse()
 
 
 print(y[0])

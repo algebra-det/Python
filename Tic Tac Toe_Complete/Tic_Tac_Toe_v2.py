@@ -1,3 +1,4 @@
+from itertools import *
 from time import *
 
 class player:
@@ -16,15 +17,14 @@ class player:
                 print(row, "  __%s__|__%s__|__%s__"%(i[0],i[1],i[2]),end="")
                 print("\n         |     |     ")
             else:
-                print(row,"       |     |     ")
+                print(row, "    %s  |  %s  |  %s  " % (i[0], i[1], i[2]), end="")
         print()
-        
     def move(self,z,j):
         try:
             term = []
             for i in z:
                 term.append(int(i))
-            if game[term[0]][term[1]]=='_':
+            if game[term[0]][term[1]]=='_' or game[term[0]][term[1]]==' ':
                 game[term[0]][term[1]] = j
                 player.board()
                 player.main(self)
@@ -34,10 +34,12 @@ class player:
             sleep(1)
             print("\nYou lost your chance, ",e)
             print()
+        finally:
+            print("Next One's Turn")
 
 
     def winning(row):
-        if row.count(row[0]) == len(row) and row[0] != '_':
+        if row.count(row[0]) == len(row) and row[0] != '_' and row[0] != ' ':
             player.board()
             print("Game won!")
             return True
@@ -83,7 +85,9 @@ class player:
             return True
         return False
 
-game = [['_'] * 3 for _ in range(3)]
+#game = [['_'] * 3 for _ in range(3)]
+game = [['_','_','_'],['_','_','_'],[' ',' ',' ']]
+
 
 x = player(1,'O')
 y = player(2,'X')
