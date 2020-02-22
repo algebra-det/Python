@@ -22,3 +22,5 @@ def binar(li):                                  # by first to last
 hello = [5,4,6,3,2,9,8,5,2,1,7,9]
 binar(hello)
 print(hello)
+
+# This will change the main variables values
