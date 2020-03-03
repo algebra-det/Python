@@ -23,12 +23,14 @@ def translate(w):
     else:                            # If there's no such word or match
         return "The word doesn't exist. Please double check it "
 
+def outputs(out):
+    if type(out) == list:
+        for item in output:
+            print(item)
+    else:
+        print(output)
+
 word = input("Enter word : ")
 
 output = translate(word)
-
-if type(output)== list:
-    for item in output:
-        print(item)
-else:
-    print(output)
+outputs(output)
