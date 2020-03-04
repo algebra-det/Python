@@ -11,6 +11,9 @@ def translate(w):
     if w in data:                    # To check if the word is in json file or not
         return data[w]
 
+    elif w.title() in data:
+        return data[w.title()]
+
     elif len(difflib.get_close_matches(w, data.keys())) > 0:        # Check if there's a match for the word
         close = difflib.get_close_matches(w, data.keys())
         taking = input("Did you mean %s instead ? \n Enter Y if yes, else press any key "%(close[0]))
