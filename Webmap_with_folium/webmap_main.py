@@ -2,7 +2,7 @@ from folium import *
 import pandas
 
 # For Volcanoes
-data = pandas.read_csv("Volcanoes_USA.txt")
+data = pandas.read_csv("Volcanoes.txt")
 
 lat = list(data["LAT"])
 lon = list(data["LON"])
@@ -38,6 +38,10 @@ def color_producer(elevation):
 map = Map(location=[28.339080, 77.319134], zoom_start=7, title="Mapbox Bright")
 
 
+# INDIA - Defining a Marker
+map.add_child(Marker(location=[28.539080, 77.319134], popup="<i>Pochinki</i>", tooltip="click to know more", icon=Icon(color='blue')))
+
+
 
 #creating a FeatureGroup() for airport
 # AIRPORT Marker
@@ -49,13 +53,11 @@ fg_airport.add_to(map)
 # Taking a variable for Tooltip
 tooltip = "Click Me!"
 
-# INDIA - Defining a Marker
-map.add_child(Marker(location=[28.539080, 77.319134], popup="<i>Pochinki</i>", tooltip="click to know more", icon=Icon(color='blue')))
 
 
 #creating a FeatureGroup() for volcanoes
 # for VOLCANOES circles
-fg_volcanoes = FeatureGroup(name="My Map")
+fg_volcanoes = FeatureGroup(name="Volcanoes")
 # Using loop for more markers
 for lt, ln, el in zip(lat, lon,elev):
     fg_volcanoes.add_child(CircleMarker(location=[lt, ln], radius=6, popup=str(el)+"m",
@@ -70,16 +72,17 @@ map.add_child(fg_volcanoes)       # or fg.add_to(Map)
 
 
 
+
 #INDIA -  Anothere way of marking - in here we can enable the whole set with map.add_child(fg)
 #If map.add_child(fg) is not written this whole fg won't work
-fg2 = FeatureGroup(name="My Map")
+fg2 = FeatureGroup(name="Pubg In INDIA")
 fg2.add_child(Marker(location=[28.739080, 77.319134], popup="<b>Bootcamp</b>", icon=Icon(color="green", icon="info-sign", angle='30'),tooltip=tooltip))
 fg2.add_child(Marker(location=[28.939080, 77.319134], popup="<b>Bootcamp</b>", icon=Icon(color="green",icon="info-sign",angle=30),tooltip=tooltip))
 fg2.add_child(Marker(location=[28.139080, 77.319134], popup="<b>Bootcamp</b>", icon=Icon(color="green",icon="info-sign",angle=30),tooltip=tooltip))
 map.add_child(fg2)
 
 # INDIA - Iterating via for Loop
-fg1 = FeatureGroup(name="Your Map")
+fg1 = FeatureGroup(name="Pubg2 In INDIA")
 for coordinate in [[28.139080, 77.919134],[28.239080, 77.319134]]:
     fg1.add_child(Marker(location=coordinate, popup="Something New", icon=Icon(color="lightgray", icon="cloud")))
 fg1.add_to(map)
@@ -110,6 +113,7 @@ icon = CustomIcon(
 mark = Marker(location=[27.739080, 76.519134], Popup="Ballabgarh",icon=icon)
 map.add_child(mark)
 
+map.add_child(LayerControl())
 
 
 map.save("Mapping.Html")
