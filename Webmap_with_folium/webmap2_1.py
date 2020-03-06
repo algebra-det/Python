@@ -7,8 +7,10 @@ lat = list(data["LAT"])
 lon = list(data["LON"])
 elev = list(data["ELEV"])
 
-col = ['pink', 'lightgreen', 'blue', 'darkpurple', 'white', 'gray', 'orange', 'green', 'darkgreen', 'darkred', 'darkblue',
-    'lightgray', 'purple', 'black', 'cadetblue', 'red', 'lightblue', 'lightred', 'beige']
+# we can also use random module to pick up random values 
+# col = ['pink', 'lightgreen', 'blue', 'darkpurple', 'white', 'gray', 'orange', 'green', 'darkgreen', 'darkred', 'darkblue',
+#       'lightgray', 'purple', 'black', 'cadetblue', 'red', 'lightblue', 'lightred', 'beige']
+# by using random.choice(col) at folium.Icon(color=random.choice(col))
 
 # Creating a function that will return color according to the elevation value passed
 def color_producer(elevation):
@@ -32,4 +34,4 @@ map.add_child(fg)       # or fg.add_to(Map)
 map.add_child(folium.ClickForMarker(
     popup="Waypoint"))
 
-map.save("Map1.html")
+map.save("Map.html")
