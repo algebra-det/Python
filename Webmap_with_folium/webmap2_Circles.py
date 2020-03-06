@@ -1,14 +1,11 @@
 import folium
 import pandas
 
-data = pandas.read_csv("Volcanoes_USA.txt")
+data = pandas.read_csv("Volcanoes.txt")
 
 lat = list(data["LAT"])
 lon = list(data["LON"])
 elev = list(data["ELEV"])
-
-col = ['pink', 'lightgreen', 'blue', 'darkpurple', 'white', 'gray', 'orange', 'green', 'darkgreen', 'darkred', 'darkblue',
-    'lightgray', 'purple', 'black', 'cadetblue', 'red', 'lightblue', 'lightred', 'beige']
 
 # Creating a function that will return color according to the elevation value passed
 def color_producer(elevation):
