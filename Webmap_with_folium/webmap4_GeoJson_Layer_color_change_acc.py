@@ -2,7 +2,7 @@ import folium
 import pandas
 import random
 
-data = pandas.read_csv("Volcanoes_USA.txt")
+data = pandas.read_csv("Volcanoes.txt")
 
 lat = list(data["LAT"])
 lon = list(data["LON"])
