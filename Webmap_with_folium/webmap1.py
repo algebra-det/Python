@@ -44,5 +44,5 @@ mark = Marker(location=[27.739080, 76.519134], Popup="Ballabgarh",icon=icon)
 map.add_child(mark)
 
 
-
+# Saving the file in HTML format
 map.save("Mapping.Html")
