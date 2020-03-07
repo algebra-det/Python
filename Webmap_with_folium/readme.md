@@ -1,9 +1,9 @@
-Webmap Using Folium Library
+Webmap Using Folium Library<br>
 <br>
 Folium is a map representation and analyzing or we can say data visulization module, which helps us to understand the working of the MAP.
 <br>
 In it we will learn how :<br>
-  To use Latitude and Longitude<br>
+<emsp>To use Latitude and Longitude<br>
   To work with data<br>
   To create Markers on map<br>
   To create Polygon on map<br>
