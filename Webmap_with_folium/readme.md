@@ -1,15 +1,15 @@
 Webmap Using Folium Library
-
+<br>
 Folium is a map representation and analyzing or we can say data visulization module, which helps us to understand the working of the MAP.
-
-In it we will learn how :
+<br>
+In it we will learn how :<br>
   To use Latitude and Longitude<br>
-  To work with data
-  To create Markers on map
-  To create Polygon on map
-  To create Boundries on map
-  To have ClickForMarker on map
-  To use GeoJson file on map
-  The layering works on map
-
+  To work with data<br>
+  To create Markers on map<br>
+  To create Polygon on map<br>
+  To create Boundries on map<br>
+  To have ClickForMarker on map<br>
+  To use GeoJson file on map<br>
+  The layering works on map<br>
+<br>
 We will also use PANDAS library to work with json file and any data files to read, analyze and use data to work on the map.
