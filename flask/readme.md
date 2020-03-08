@@ -9,4 +9,6 @@ Flask<br>
 <br>from the root, we have to use the terminal to make :
 <br>1. create a python virtual environment
 <br>2. initializing git
-<br>3. deploying the website to any servers like Heroku
+<br>3. deploying the website to any servers like Heroku(which I have used for this project)<br>
+<br> CHECK OUT ONE OF MY PROJECT:<br>
+https://terminal404.herokuapp.com/
