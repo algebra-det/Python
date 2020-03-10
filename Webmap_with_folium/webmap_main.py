@@ -2,11 +2,12 @@ from folium import *
 import pandas
 
 # For Volcanoes
-data = pandas.read_csv("Volcanoes.txt")
+data = pandas.read_csv("Volcanoes_USA.txt")
 
 lat = list(data["LAT"])
 lon = list(data["LON"])
 elev = list(data["ELEV"])
+name_v = list(data["NAME"])
 
 
 # For airport
@@ -59,18 +60,20 @@ tooltip = "Click Me!"
 # for VOLCANOES circles
 fg_volcanoes = FeatureGroup(name="Volcanoes")
 # Using loop for more markers
-for lt, ln, el in zip(lat, lon,elev):
-    fg_volcanoes.add_child(CircleMarker(location=[lt, ln], radius=6, popup=str(el)+"m",
+for lt, ln, el, nm in zip(lat, lon, elev, name_v):
+    fg_volcanoes.add_child(CircleMarker(location=[lt, ln], radius=7, popup=nm,
     fill_color=color_producer(el), color="grey", fill_opacity=0.7))
-
-# using GeoJason() in folium to take .json file
-fg_volcanoes.add_child(GeoJson(data=open("world.json", "r", encoding="utf-8-sig").read(),
-    style_function=lambda x: {"fillColor":"yellow" if x["properties"]["POP2005"] < 1000000
-    else "orange" if 1000000<=x["properties"]["POP2005"]<2000000 else "red"} ))
 
 map.add_child(fg_volcanoes)       # or fg.add_to(Map)
 
 
+# using GeoJason() in folium to take .json file - Polygon
+fg_polygon = FeatureGroup(name="Polygon Layer")
+fg_polygon.add_child(GeoJson(data=open("world.json", "r", encoding="utf-8-sig").read(),
+    control=False, style_function=lambda x: {"fillColor":"yellow" if x["properties"]["POP2005"] < 1000000
+    else "orange" if 1000000<=x["properties"]["POP2005"]<2000000 else "red"} ))
+
+fg_polygon.add_to(map)
 
 
 #INDIA -  Anothere way of marking - in here we can enable the whole set with map.add_child(fg)
@@ -92,6 +95,7 @@ Marker([28.739080, 77.519134], popup="Camp Alpha", icon=Icon(color="red", icon="
 Marker([27.739080, 77.519134], popup="School", icon=Icon(color="cadetblue",icon_color="white"), tooltip="NewOne").add_to(map)
 
 # INDIA - defining click to mark function
+
 map.add_child(ClickForMarker(popup="Waypoint Bro"))
 
 # defining latitude/longitude popovers
@@ -116,4 +120,4 @@ map.add_child(mark)
 map.add_child(LayerControl())
 
 
-map.save("Mapping.Html")
+map.save("map.html")
