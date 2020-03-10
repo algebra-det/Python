@@ -13,12 +13,12 @@ name_v = list(data["NAME"])
 # For airport
 data_airports = pandas.read_csv("airport.txt")
 
-cor = list(data_airports["coordinates"])
+cor = list(data_airports["coordinates"])        # as in airports.txt file contains cordinates but they are not in list unlike Volcanoes_USA.txt and are seperated by commas
 name = list(data_airports["name"])
 lati_for_airport = []
 long_for_airport = []
 
-for i in cor:
+for i in cor:               # breaking the coordinates and storing them seperately in a list
     j,k = i.split(",")
     lati_for_airport.append(j)
     long_for_airport.append(k)
