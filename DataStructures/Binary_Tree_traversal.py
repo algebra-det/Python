@@ -34,7 +34,7 @@ def print_Postorder(root):
 
 		print(root.val, " - ",end="")
 
-#		1
+#	    1
 #	   / \
 #	  2   3
 #	 / \
